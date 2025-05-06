@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>Добавить игрока</title>
+</head>
+<body>
+    <h3>Выберите игрока</h3>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Отчество</th>
+            <th scope="col">Пол</th>
+            <th scope="col">Дата рождения</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="player: ${allPlayers}">
+            <th scope="row" class="text-black" th:text="${player.firstName}"></th>
+            <th scope="row" class="text-black" th:text="${player.lastName}"></th>
+            <th scope="row" class="text-black" th:text="${player.middleName}"></th>
+            <th scope="row" class="text-black" th:text="${player.gender}"></th>
+            <th scope="row" class="text-black" th:text="${#dates.format(player.dateOfBirthday,'dd.MM.yyyy')}"></th>
+            <td>
+                <form action="#" th:action="@{'/allTeams/'+${team.id}+'/'+${player.id}+'/saveAddPlayer/'}" method="post">
+                <div class="form-group">
+                    <label>Капитан команды</label>
+                    <input type="checkbox" th:checked="${playerTeam.capitan}" th:field="*{playerTeam.capitan}">
+                </div>
+                <div class="m-2">
+                        <button type="submit" class="btn btn-primary">Добавить</button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+            <div class="col form-group p-4">
+                <a th:href="@{'/allTeams/' + ${team.id}+'/getOurPlayers/'}">
+                    <button type="button" class="btn btn-secondary">Назад</button>
+                </a>
+            </div>
+</body>
+</html>

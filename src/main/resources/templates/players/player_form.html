@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>Игрок</title>
+</head>
+<body>
+<h3>Данные игрока</h3>
+<div class="row">
+    <div class="col-md-3 ms-3">
+        <form action="#" th:action="@{/allPlayers/save}" method="post" th:object="${player}">
+            <div class="form-group p-2">
+                <label> Имя: </label>
+                <input type="text" th:field="*{firstName}" class="form-control"/>
+            </div>
+            <div class="form-group p-2">
+                <label> Фамилия: </label>
+                <input type="text" th:field="*{lastName}" class="form-control"/>
+            </div>
+            <div class="form-group p-2">
+                <label> Отчество: </label>
+                <input type="text" th:field="*{middleName}" class="form-control"/>
+            </div>
+            <div class="form-group p-2">
+                <label> Пол: </label>
+                <select th:field="*{gender}">
+                    <option th:value="MALE">Мужской</option>
+                    <option th:value="FEMALE">Женский</option>
+                </select>
+            </div>
+            <div class="form-group p-2">
+                <label> Дата рождения: </label>
+                <input type="date" th:field="*{dateOfBirthday}" class="form-control"/>
+            </div>
+            <div class="form-group p-2">
+                <label> Телефон: </label>
+                <input type="text" th:field="*{telephonNum}" class="form-control"/>
+            </div>
+            <div class="form-group p-2">
+                <label>Email: </label>
+                <input type="text" th:field="*{email}" class="form-control"/>
+            </div>
+            <div class="form-group p-2">
+                <label> Место учебы/работы: </label>
+                <input type="text" th:field="*{placeOfWorkOrStudy}" class="form-control"/>
+            </div>
+            <div class="form-group p-2">
+                <label> Дополнительная информация: </label>
+                <input type="text" th:field="*{additionalInformation}" class="form-control"/>
+            </div>
+            <div class="row">
+                <div class="col form-group p-4">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+                <div class="col form-group p-4">
+                    <a th:href="@{/allPlayers}">
+                        <button type="button" class="btn btn-secondary">Отмена</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

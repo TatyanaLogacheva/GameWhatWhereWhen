@@ -1,0 +1,20 @@
+body {
+    background-image: url("/static/imges/regok.jpg");
+    background-size: cover;
+    color: white;
+}
+h3{
+    text-align: center;
+    font-family: Mistral;
+    font-size: 80px;
+}
+button{
+    position: relative;
+    top: 450px;
+    justify-content: flex-end;
+    float: right;
+    text-align: right;
+}
+span{
+    font-size: 30px;
+}

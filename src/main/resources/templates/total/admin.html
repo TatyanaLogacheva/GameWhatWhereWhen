@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>Главная</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/common.css}"/>
+</head>
+<body>
+<div class="row">
+    <div class = "col ms-3 mt-5 p-3 left-buttons">
+        <div class="p-2" >
+            <a th:href ="@{'/allPlayers'}"><button type="button" class="btn btn-outline-dark"><span>Все игроки</span></button></a>
+        </div>
+
+        <div class="p-2" >
+            <a th:href ="@{'/allTeams'}"><button type="button" class="btn btn-outline-dark"><span>Команды</span></button></a>
+        </div>
+
+    </div>
+    <div class = "col me-3 mt-5 p-3 right-buttons">
+        <div class=" p-2 d-flex justify-content-end" >
+            <a th:href ="@{'/allGames'}"><button type="button" class="btn btn-outline-dark"><span>Игры</span></button></a>
+        </div>
+
+        <div class="p-2 d-flex justify-content-end" >
+            <a th:href ="@{'/allQuestoins'}"><button type="button" class="btn btn-outline-dark"><span>Вопросы</span></button></a>
+        </div>
+    </div>
+</div>
+
+<form th:action="@{/logout}" method="post">
+    <div class="back-button">
+        <div class="col-md-8 mx-auto text-center position-relative" style="top:400px">
+            <a th:href ="@{'/'}"><button type="submit" class="btn btn-outline-dark" ><span class="fs-4">Выход</span></button></a>
+        </div>
+    </div>
+</form>
+</body>
+</html>

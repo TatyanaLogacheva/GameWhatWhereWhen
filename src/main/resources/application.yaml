@@ -1,0 +1,24 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: ROLE_ADMIN
+  datasource:
+    url: jdbc:postgresql://localhost:5432/game_www
+    username: postgres
+    password: 957310a2
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database: postgresql
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
