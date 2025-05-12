@@ -22,6 +22,6 @@ public class PlayerTeam {
     Team team;
 
     @Column(name = "is_capitan")
-    private boolean isCapitan;
+    private Boolean isCapitan;
 
 }

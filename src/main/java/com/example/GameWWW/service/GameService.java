@@ -124,7 +124,7 @@ public class GameService {
     public GameInfoResp defineWinnerTeam(Long id) {
         Game game = getGameFromDB(id);
         game.getGameTeams().forEach(gt -> {
-            if (gt.isWinner()) {
+            if (gt.getWinner()) {
                 gt.setWinner(false);
             }
             gt.setTotalPoints(gameTeamRepository.getTotalPoints(gt.getTeam().getId()));

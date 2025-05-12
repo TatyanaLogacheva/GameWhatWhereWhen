@@ -23,7 +23,7 @@ public class GameTeam {
     private Team team;
 
     @Column(name = "winner")
-    private boolean winner;
+    private Boolean winner;
 
     @Column(name = "total_points")
     private Integer totalPoints;

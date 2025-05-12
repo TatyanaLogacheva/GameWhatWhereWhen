@@ -121,7 +121,7 @@ public class TeamService {
         teamRepository.save(teamFromDB);
         playerTeamRepository.save(playerTeam);
 
-        if (playerTeam.isCapitan()) {
+        if (playerTeam.getIsCapitan()) {
             changeCapitan(teamID, playerID);
         }
         playerRepository.save(playerFromDB);
@@ -139,12 +139,12 @@ public class TeamService {
     public void changeCapitan(Long teamID, Long playerID) {
         Team team = getTeamFromDB(teamID);
         team.getPlayerTeams().forEach(playerTeam -> {
-            if (playerTeam.isCapitan()) {
-                playerTeam.setCapitan(false);
+            if (playerTeam.getIsCapitan()) {
+                playerTeam.setIsCapitan(false);
             }
         });
         PlayerTeam playerTeam = playerTeamRepository.findPlayerTeamByTeam_IdAndPlayer_Id(teamID, playerID);
-        playerTeam.setCapitan(true);
+        playerTeam.setIsCapitan(true);
         playerTeamRepository.save(playerTeam);
     }
 

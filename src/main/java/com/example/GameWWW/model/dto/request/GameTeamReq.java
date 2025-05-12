@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-import javax.validation.constraints.NotNull;
 
 @Setter
 @Getter
@@ -17,7 +16,7 @@ import javax.validation.constraints.NotNull;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GameTeamReq {
 
-    private boolean winner;
+    private Boolean winner;
 
     private Integer totalPoints;
 }

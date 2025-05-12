@@ -18,5 +18,5 @@ import javax.validation.constraints.NotNull;
 public class PlayerTeamReq {
 
     @NotNull
-    private boolean isCapitan;
+    private Boolean isCapitan;
 }
